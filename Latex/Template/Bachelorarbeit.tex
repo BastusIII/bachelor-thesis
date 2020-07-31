@@ -1,0 +1,289 @@
+%%% latex configuration start %%%
+\documentclass[
+							a4paper, 
+							11pt, 
+							openany, 
+							liststotoc,
+							parskip=half, 
+   							headings=normal
+						]{scrreprt}						
+% all needed packages %
+\input{packages}
+% all needed commands %
+\input{commands}
+
+%%% latex configuration end %%%
+
+\begin{document}
+
+%%% document configuration start %%%
+
+% headline and footline %
+\input{headfoot}
+% title page%
+\input{titlepage}
+% Definition bis zu welcher Tiefe Überschriften numeriert werden
+\setcounter{secnumdepth}{3}
+\renewcommand{\arraystretch}{2}
+
+%%% document configuration start %%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ZUSAMMENFASSUNG
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+% Ein paar Sätze zur Arbeit
+\section*{Kurzzusammenfassung} \label{se:zusammenfassung}
+Lorem Ipsum
+Lorem Ipsum
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ZUSAMMENFASSUNG ENDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Inhaltsverzeichnis usw.
+\pagenumbering{roman}
+\tableofcontents 
+\clearpage
+\pagenumbering{arabic} 
+\setcounter{page}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Latex Konstrukte
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Latex Konstrukte} \label{ch:konstrukte}
+\section{Aufzählung} \label{se:konstrukte_aufzaehlung}
+\begin{itemize}
+	\item item 1
+	\begin{itemize}
+		\item sub item 11
+		\item sub item 12
+		\item sub item 13
+	\end{itemize}
+	\item item 2
+	\item item 3
+\end{itemize}
+\clearpage
+
+\section{Grafiken} \label{se:konstrukte_grafiken}
+\begin{figure}[H]
+\begin{center}
+    \includegraphics[width=1.0\textwidth]{./pictures/hm_logo_svg.pdf}
+	\caption[Kurzeintrag Verzeichnis Beispielbild]{Text unter Beispielbild} \label{fig:beispielbild}
+\end{center}
+\end{figure}
+
+\begin{wrapfigure}[13]{r}{0.6\textwidth}
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{./pictures/hm_logo_svg.pdf}
+  \end{center}
+  \caption[Kurzeintrag Verzeichnis Beispielbild wrapped]{Text unter Beispielbild wrapped} \label{fig:beispielbild_wrapped} 
+\end{wrapfigure}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\clearpage
+
+\section{Links} \label{se:konstrukte_links}
+In \autoref{ch:konstrukte} werden Latex Konstrukte vermittelt.
+\newline
+In \autoref{se:links} (Links) werden Latex Links erklärt.
+\newline
+Ein \ref{fig:beispielbild_wrapped} (Grafik) kurzer Grafik Link.
+\clearpage
+
+
+\section{Abkürzungen} \label{se:konstrukte_abkuerzungen}
+\acf{abk} erstes Vorkommen.
+\newline
+\acs{abk} weitere Vorkommen.
+\clearpage
+
+\section{Textgestaltung} \label{se:konstrukte_textgestaltung}
+\textbf{big}\\
+\textit{\glqq italic\grqq}\\
+\texttt{monospace}\\
+Trenn\-zeichen definieren\\
+\clearpage
+
+\section{Zitate} \label{se:konstrukte_zitate}
+\textit{\glqq Dies ist ein Buchzitat mit Seitenzahl.\grqq}\cite[S.92ff.]{bsp:buchzitat}
+\newline
+\textit{\glqq Dies ist ein Artikelzitat.\grqq}\cite{bsp:artikelzitat}
+\newline
+\textit{\glqq Dies ist ein Weblinkzitat.\grqq}\cite{bsp:weblinkzitat}
+\clearpage
+
+\section{Tabellen} \label{se:konstrukte_tabellen}
+\begin{table}[h]\footnotesize
+\begin{center}
+\begin{tabular}{ | p{3cm} | p{5cm} | p{5cm} |}
+  \hline
+    \textbf{Überschrift 1} & \textbf{Überschrift 2} & \textbf{Überschrift 3} \\
+  \hline
+    Inhalt 11 & Inhalt 12 & Inhalt 13 \\
+  \hline
+    Inhalt 21 & Inhalt 22 & Inhalt 23 \\
+  \hline
+    Inhalt 31 & Inhalt 32 & Inhalt 33 \\
+  \hline
+\end{tabular}
+\caption[Kurzeintrag Verzeichnis Beispiel Tabelle]{Text unter Beispiel Tabelle} \label{tab:Beispieltabelle}
+\end{center}
+\end{table}
+\clearpage
+
+\section{Listings - Codebeispiele} \label{se:konstrukte_listings}
+\subsection{Java}
+\begin{lstlisting}[{language=JAVA, label=lst:Java - Codebeispiel, caption={[Kurzeintrag Verzeichnis Java Codebeispiel]{Text unter Java Codebeispiel}}}]
+public class MainClass {
+  public static void main(String args[]) {
+    double a = 3.0, b = 4.0;
+
+    // c is dynamically initialized
+    double c = Math.sqrt(a * a + b * b);
+
+    System.out.println("Hypotenuse is " + c);
+  }
+}
+\end{lstlisting}
+\clearpage
+
+\subsection{XML}
+\begin{lstlisting}[{style=xmlandroid, label=lst:Java - Codebeispiel, caption={[Kurzeintrag Verzeichnis XML Codebeispiel]{Text unter XML Codebeispiel}}}]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" >
+	...
+	<TextView
+		...
+		android:id="@+id/tv_testTextView"
+		android:text="@string/tv_testTextView" />
+
+	<Button
+		...
+		android:id="@+id/bt_testButton"
+		android:onClick="buttonPressed"
+		android:text="@string/bt_testButton" />        
+</LinearLayout>
+\end{lstlisting}
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Latex Konstrukte ENDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% EINLEITUNG
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Einleitung} \label{ch:einleitung}
+
+% Warum habe ich das Thema der Bachelorarbeit gewählt, wie ist der aktuelle Stand
+\section{Motivation und Ausgangssituation} \label{se:einleitung_motivation}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+\clearpage
+
+% Wo liegen Probleme, Schwerpunkte bei der Umsetzung
+\section{Problembeschreibung} \label{se:einleitung_problem}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+\clearpage
+
+%% Was ist das Ziel der Arbeit, soll am Ende herauskommen
+\section{Ziel der Bachelorarbeit} \label{se:einleitung_ziel}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+\clearpage
+
+%% Wie ist die Arbeit aufgebaut und warum habe ich diese Struktur gewählt
+\section{Vorgehensweise und Aufbau der Arbeit} \label{se:einleitung_aufbau}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+\clearpage
+
+%% Wie ist die Arbeit formatiert, wie sind Zitate etc. umgesetzt
+\section{Hinweise zu Formatierung und Struktur} \label{se:einleitung_struktur}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% EINLEITUNG ENDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% GRUNDLAGEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Welche mathematischen Grundlagen werden benötigt, kurze Erklärung, Definition verwendeter Sätze / Regeln
+\chapter{Technische Grundlagen} \label{ch:grundlagen}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% GRUNDLAGEN ENDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% UMSETZUNG UND PROGRAMMIERUNG
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Umsetzung und Programmierung} \label{ch:umsetzung}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ENDE UMSETZUNG UND PROGRAMMIERUNG
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% VERZEICHNISSE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Abbildungsverzeichnis
+\listoffigures
+
+% Abkürzungsverzeichnis
+\chapter*{Abkürzungsverzeichnis}
+\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis} 
+\begin{acronym}[Abk.]
+\acro{abk} [Abk.] {Abkürzung}
+\end{acronym}
+
+% Listingverzeichnis -> Codebeispiele
+\lstlistoflistings
+
+% Literaturverzeichnis
+\addchap{Literaturverzeichnis}
+\bibliographystyle{alphadin}
+\begin{btSect}{literatur}
+\section*{Literatur}
+\btPrintCited
+\end{btSect}
+
+\clearpage
+% Weblinkverzeichnis
+\begin{btSect}{weblinks}
+\section*{Weblinks}
+\btPrintCited
+\end{btSect}
+
+% Tabellenverzeichnis
+\listoftables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% VERZEICHNISSE ENDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ANHANG
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\thesection}{\Alph{section}}
+\appendix
+\addchap{Anhang}
+\section{Inhalt der beiliegenden CD}
+Inhalte auf der CD. BA im PDF-Format, zitierte Weblinks im PDF Format, die Anwendung, offizielle Spielregeln als PDF, Sonstiges.
+
+%% Erklärung
+\input{statement}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ANHANG ENDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

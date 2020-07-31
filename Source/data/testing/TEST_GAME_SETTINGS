@@ -1,0 +1,10 @@
+<edu.fhm.cs.ss.schafkopf.model.persistence.GameSettings>
+  <filename>GAME_SETTINGS</filename>
+  <nameBottom>Bottom Player</nameBottom>
+  <nameLeft>Left Player</nameLeft>
+  <nameTop>Top Player</nameTop>
+  <nameRight>Right Player</nameRight>
+  <chargeSolo>50</chargeSolo>
+  <chargeNormal>10</chargeNormal>
+  <startMoney>1000</startMoney>
+</edu.fhm.cs.ss.schafkopf.model.persistence.GameSettings>

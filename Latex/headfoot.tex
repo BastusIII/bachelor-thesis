@@ -1,0 +1,24 @@
+%Kopf- und Fußzeile
+\pagestyle{fancy}
+\fancyhf{}
+ 
+%Kopfzeile mittig mit Kaptilname
+\fancyhead[L]{\textsf{\nouppercase{\leftmark}}}
+
+%Linie oben
+\renewcommand{\headrulewidth}{0.5pt}
+	\fancyfoot[R]{\thepage}
+%Linie unten
+\renewcommand{\footrulewidth}{0.5pt}
+ 
+% Fußzeile auf jeder Seite - auch Kapitel und Inhaltsverzeichnis
+\fancypagestyle{plain}{%
+   \fancyhf{}%
+	\fancyfoot[R]{\thepage}
+   \renewcommand{\headrulewidth}{0.0pt} %obere Linie ausblenden
+}
+
+\addtolength{\headheight}{\baselineskip}
+\addtolength{\headheight}{0.61pt}
+\addtolength{\footskip}{10pt}
+\renewcommand{\headrulewidth}{1pt}% Trennlinie

@@ -1,0 +1,9 @@
+<edu.fhm.cs.ss.schafkopf.model.GameSettings>
+  <basicCharge>10</basicCharge>
+  <nameBottom>Kunibert</nameBottom>
+  <nameLeft>Xaver</nameLeft>
+  <nameRight>Heinz</nameRight>
+  <nameTop>Claudi</nameTop>
+  <soloMultiplier>5</soloMultiplier>
+  <startMoney>1000</startMoney>
+</edu.fhm.cs.ss.schafkopf.model.GameSettings>

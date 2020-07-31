@@ -1,0 +1,180 @@
+%packages%
+\usepackage[ngerman]{babel}
+\usepackage{cite}
+%\usepackage[numbers,square]{natbib}
+\usepackage[utf8x]{inputenc}
+%\usepackage[svgnames]{xcolor}
+\usepackage[dvipsnames]{xcolor} 
+\usepackage{comment}
+\usepackage{fancyhdr}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{nomencl}
+\usepackage{float}
+\usepackage{lastpage}
+\usepackage{caption}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{tipa}
+\usepackage{lmodern}
+%\usepackage[bookmarks=true,colorlinks=true,pagecolor=black,linktocpage=true]{hyperref}
+\usepackage{amsmath,amsfonts,amsthm}
+\usepackage[ruled,vlined]{algorithm2e}
+%\usepackage[lined,boxed,commentsnumbered]{algorithm2e}
+\usepackage{setspace}
+\usepackage{geometry}
+%\usepackage{svgnames}{xcolor}
+%\PassOptionsToPackage{xcolor=dvipsnames}{beamer}
+%\usepackage[svgnames]{xcolor}
+%\usepackage{xcolor}
+\usepackage{tabularx}
+
+\usepackage[
+    bookmarks,
+    bookmarksopen=true,
+    colorlinks=true,
+    linkcolor=red, 
+    citecolor=OliveGreen,
+    urlcolor=blue,  
+%    linkcolor=black, 
+%    citecolor=black,
+%    urlcolor=black,     
+    anchorcolor=black, 
+    filecolor=black,
+    menucolor=red, 
+    backref,
+    plainpages=false, 
+    pdfpagelabels,
+    hypertexnames=false, 
+    linktocpage 
+]{hyperref}
+
+\usepackage[
+	nohyperlinks,
+	printonlyused
+]{acronym}
+
+\usepackage{bibtopic}
+
+% für source code
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{myred}{rgb}{1,0,0}
+\definecolor{myblue}{rgb}{0,0,1}
+
+\lstset{ %
+  %backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\ttfamily\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  frame=bt,
+  language=XML,                 	% the language of the code
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{myblue},     % string literal style
+  tabsize=2,                       % sets default tabsize to 2 spaces  
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+%% obere reihe wörter die vorne stehen, also auseinander 
+%% untere reihe wörter die innen stehen, also zusammen
+%\lstdefinestyle{xmlandroid} {
+% morekeywords={
+%  encoding, service, name, class,
+%  android:name, android:minSdkVersion, android:targetSdkVersion, android:protectionLevel, android:value, android:allowBackup, android:icon, android:label, android:theme, xmlns:android, android:id, xmlns:tools,android:layout_width, android:layout_height, android:layout_gravity, android:hint, android:ems, android:text, android:onClick, android:orientation}
+% }
+ 
+
+%\lstdefinestyle{xmltomcat} {
+%  morekeywords={encoding, web, app, servlet, name, class, mapping, url, pattern}
+%}
+
+%\lstdefinelanguage{XML}
+%{
+%  basicstyle=\ttfamily\footnotesize,
+%  moredelim=[s][\color{red}]{\ }{=},
+%  moredelim=[s][\color{Maroon}]{<}{>},
+%  moredelim=[s][\color{Maroon}]{</}{>},
+%  morestring=[s][\color{blue}]{"}{"},
+%  morecomment=[s]{<?}{?>},
+%  morecomment=[s]{<!--}{-->},
+%  commentstyle=\color{DarkOliveGreen},
+%  stringstyle=\color{black}
+%}
+
+\lstdefinelanguage{XML}
+{
+  %basicstyle=\ttfamily,
+  morestring=[s]{"}{"},
+  %morecomment=[s]{?}{?>},
+  morecomment=[s]{<!--}{-->},
+  commentstyle=\color{DarkOliveGreen},
+  %moredelim=[s][\color{black}]{>}{</},
+  moredelim=[s][\color{black}]{>}{<},
+  moredelim=[s][\color{red}]{\ }{=},
+  stringstyle=\color{blue},
+  identifierstyle=\color{Maroon},
+  keywordstyle=\color{red},
+  %morekeywords={xml,version,type}% list your attributes here
+}
+
+%\usepackage[font=normalsize,format=plain,labelfont={bf,normalsize},textfont={it,normalsize}]{caption}
+%\usepackage{courier}
+%
+%\definecolor{lightgray}{gray}{0.9}
+%\definecolor{gray}{rgb}{0.4,0.4,0.4}
+%\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+%\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+%\lstset{
+%  basicstyle=\footnotesize\ttfamily, % Standardschrift
+%  %numbers=left, % Ort der Zeilennummern
+%  numberstyle=\tiny, % Stil der Zeilennummern
+%  %stepnumber=2, % Abstand zwischen den Zeilennummern
+%  numbersep=5pt, % Abstand der Nummern zum Text
+%  tabsize=2, % Groesse von Tabs
+%  extendedchars=true, %
+%  breaklines=true, % Zeilen werden Umgebrochen
+%  keywordstyle=\color{red},
+%    frame=b,
+%  % keywordstyle=[1]\textbf, % Stil der Keywords
+%  % keywordstyle=[2]\textbf, %
+%  % keywordstyle=[3]\textbf, %
+%  % keywordstyle=[4]\textbf, \sqrt{\sqrt{}} %
+%  stringstyle=\color{white}\ttfamily, % Farbe der String
+%  showspaces=false, % Leerzeichen anzeigen ?
+%  showtabs=false, % Tabs anzeigen ?
+%  xleftmargin=17pt,
+%  framexleftmargin=17pt,
+%  framexrightmargin=5pt,
+%  framexbottommargin=4pt,
+%  %backgroundcolor=\color{lightgray},
+%  showstringspaces=false % Leerzeichen in Strings anzeigen ?
+%}
+
+%\lstdefinelanguage{XML}
+%{
+%  basicstyle=\ttfamily,
+%  morestring=[b]",
+%  morestring=[s]{>}{<},
+%  morecomment=[s]{},
+%  stringstyle=\color{blue},
+%  identifierstyle=\color{Maroon},
+%  keywordstyle=\color{cyan},
+%  morekeywords={xmlns,version,type}% list your attributes here
+%}
+
+%\DeclareCaptionFont{white}{\color{white}}
+%\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+%\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
